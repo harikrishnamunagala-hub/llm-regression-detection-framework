@@ -1,0 +1,13 @@
+baseline:
+  provider: gemini
+  model: gemini-3.1-flash-lite
+
+candidate:
+  provider: gemini
+  model: gemini-3.1-flash-lite
+
+dataset_path: datasets/test_data.json
+
+regression_threshold: 3
+
+report_path: reports/evaluation_report.md

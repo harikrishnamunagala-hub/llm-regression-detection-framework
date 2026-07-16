@@ -1,0 +1,20 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE
+.vscode/
+
+# Reports (generated at runtime)
+reports/
+
+# OS
+.DS_Store
+Thumbs.db

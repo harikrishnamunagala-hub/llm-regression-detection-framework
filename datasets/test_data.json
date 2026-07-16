@@ -1,0 +1,81 @@
+[
+    {
+  "id": 21,
+  "category": "Programming",
+  "difficulty": "Medium",
+  "question": "Which keyword is used to create a class in Python?",
+  "expected_answer": "class"
+},
+{
+  "id": 22,
+  "category": "Programming",
+  "difficulty": "Medium",
+  "question": "Which operator checks equality in Python?",
+  "expected_answer": "=="
+},
+{
+  "id": 23,
+  "category": "Programming",
+  "difficulty": "Medium",
+  "question": "What does OOP stand for?",
+  "expected_answer": "Object Oriented Programming"
+},
+{
+  "id": 24,
+  "category": "Programming",
+  "difficulty": "Hard",
+  "question": "Which sorting algorithm has an average time complexity of O(n log n)?",
+  "expected_answer": "Merge Sort"
+},
+{
+  "id": 25,
+  "category": "Programming",
+  "difficulty": "Hard",
+  "question": "What is the worst-case time complexity of Quick Sort?",
+  "expected_answer": "O(n²)"
+}
+
+,
+{
+  "id": 26,
+  "category": "Science",
+  "difficulty": "Easy",
+  "question": "What is the chemical symbol for sodium?",
+  "expected_answer": "Na"
+},
+{
+  "id": 27,
+  "category": "Science",
+  "difficulty": "Easy",
+  "question": "What planet is known as the Red Planet?",
+  "expected_answer": "Mars"
+},
+{
+  "id": 28,
+  "category": "Science",
+  "difficulty": "Easy",
+  "question": "What is H₂O commonly known as?",
+  "expected_answer": "Water"
+},
+{
+  "id": 29,
+  "category": "Science",
+  "difficulty": "Easy",
+  "question": "What gas do humans breathe to survive?",
+  "expected_answer": "Oxygen"
+},
+{
+  "id": 30,
+  "category": "Science",
+  "difficulty": "Easy",
+  "question": "How many chambers does the human heart have?",
+  "expected_answer": "4"
+},
+{
+  "id": 31,
+  "category": "Science",
+  "difficulty": "Medium",
+  "question": "What is the SI unit of force?",
+  "expected_answer": "Newton"
+}
+]
