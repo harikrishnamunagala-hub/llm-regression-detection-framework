@@ -1,4 +1,4 @@
-from src.models import MockModel,GeminiModel
+from src.models import MockModel,GeminiModel, OpenAIModel
 
 class ModelFactory:
 
@@ -11,5 +11,8 @@ class ModelFactory:
         elif provider == "gemini":
             return GeminiModel(model_name)
 
+        elif provider == "openai":
+            return OpenAIModel(model_name)
+
         else:
-            raise ValueError(f"Unknown model: {model_name}")
+            raise ValueError(f"Unknown model: {provider}")

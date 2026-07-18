@@ -1,16 +1,35 @@
 
 
 class Regression_Detector:
-    def detect(self,baseline_accuracy,candidate_accuracy,regression_threshold):
+    def detect(self,baseline,candidate,threshold):
 
-        drop=baseline_accuracy-candidate_accuracy
+        baseline_accuracy = baseline["accuracy"]
+        candidate_accuracy = candidate["accuracy"]
 
-        if drop > regression_threshold:
-            return {
-                "status":"Fail",
-                "drop": drop
-            }
+        drop = baseline_accuracy - candidate_accuracy
+
+        if drop >= threshold:
+            status = "FAIL"
+        else:
+            status = "PASS"
+
+        regressions = 0
+        improvements = 0
+
+        for baseline_result, candidate_result in zip(
+            baseline["results"],
+            candidate["results"]
+        ):
+
+            if baseline_result["passed"] and not candidate_result["passed"]:
+                regressions += 1
+
+            elif (not baseline_result["passed"]) and candidate_result["passed"]:
+                improvements += 1
+
         return {
-            "status":"Pass",
-            "drop":drop
+            "drop": round(drop, 2),
+            "status": status,
+            "regressions": regressions,
+            "improvements": improvements
         }

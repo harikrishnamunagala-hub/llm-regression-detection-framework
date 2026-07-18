@@ -41,22 +41,22 @@
   "difficulty": "Easy",
   "question": "What is 15²?",
   "expected_answer": "225"
-},
-{
+  },
+  {
   "id": 7,
   "category": "Mathematics",
   "difficulty": "Easy",
   "question": "What is the square root of 144?",
   "expected_answer": "12"
-},
-{
+  },
+  {
   "id": 8,
   "category": "Mathematics",
   "difficulty": "Easy",
   "question": "What is 45 + 78?",
   "expected_answer": "123"
-},
-{
+  },
+  {
   "id": 9,
   "category": "Mathematics",
   "difficulty": "Easy",

@@ -1,13 +1,29 @@
 baseline:
-  provider: gemini
-  model: gemini-3.1-flash-lite
+
+    provider: gemini
+
+    model: gemini-3.1-flash-lite
+
+    prompt: prompts/v1.yaml
 
 candidate:
-  provider: gemini
-  model: gemini-3.1-flash-lite
+
+    provider: gemini
+
+    model: gemini-3.1-flash-lite
+
+    prompt: prompts/v2.yaml
 
 dataset_path: datasets/test_data.json
+scorer: semantic_scorer
 
 regression_threshold: 3
 
 report_path: reports/evaluation_report.md
+drift:
+  window: 5
+  threshold: 3
+
+report_path: reports/evaluation_report.md
+html_report_path: reports/evaluation_report.html
+history_path: history/history.json

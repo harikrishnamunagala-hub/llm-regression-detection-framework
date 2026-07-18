@@ -90,7 +90,7 @@ class Report_Generator:
 
             for result in baseline_evaluation["results"]:
 
-                if result["score"] == 0:
+                if result["passed"] == 0:
 
                     file.write(f"#### Question {result['id']}\n\n")
 
@@ -120,7 +120,7 @@ class Report_Generator:
 
             for result in candidate_evaluation["results"]:
 
-                if result["score"] == 0:
+                if result["passed"] == 0:
 
                     file.write(f"#### Question {result['id']}\n\n")
 

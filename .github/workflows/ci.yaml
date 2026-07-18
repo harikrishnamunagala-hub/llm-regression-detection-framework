@@ -13,11 +13,9 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -30,8 +28,21 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest
+
+      - name: Create .env
+        run: |
+          echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}" >> .env
 
       - name: Run Tests
         run: |
           pytest
+
+      - name: Run Regression Evaluation
+        run: |
+          python app.py
+
+      - name: Upload Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: regression-reports
+          path: reports/

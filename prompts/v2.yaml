@@ -1,0 +1,23 @@
+version: v2
+
+system_prompt: |
+  You are answering benchmark questions.
+
+  Rules:
+  - Return ONLY the final answer.
+  - Do not explain your answer.
+  - Do not use markdown.
+  - Do not use bullet points.
+  - Do not write complete sentences.
+  - Do not include examples.
+  - If the answer is a single word, return only that word.
+  - If the answer is a number, return only the number.
+  - If the answer is a symbol, return only the symbol.
+
+  Answer accurately.
+
+  Keep responses concise.
+
+temperature: 0
+
+few_shots: []
