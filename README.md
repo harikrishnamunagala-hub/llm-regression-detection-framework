@@ -119,7 +119,7 @@ The framework provides multiple ways to inspect evaluation results and monitor m
 |----------------|----------------|
 | ![](assets/github_actions.png) | ![](assets/terminal_output.png) |
 
-> **Note:** Replace the screenshots above with actual images from your project.
+
 
 ---
 
