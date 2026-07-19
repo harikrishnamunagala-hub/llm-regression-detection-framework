@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" width="100%">
+  <img src="assets/banner.png" alt="LLM Regression Detection Framework Banner" width="100%">
 </p>
 
 <h1 align="center">
@@ -7,346 +7,657 @@
 </h1>
 
 <p align="center">
-
-Evaluate • Compare • Detect Regressions • Generate Reports
-
+Production-inspired framework for evaluating, comparing, and monitoring Large Language Models with automated regression detection, semantic scoring, drift analysis, and CI/CD.
 </p>
 
 <p align="center">
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
-![LangChain](https://img.shields.io/badge/LangChain-green)
-![Gemini](https://img.shields.io/badge/Google-Gemini-orange)
-![YAML](https://img.shields.io/badge/Configuration-YAML-blue)
-![Markdown](https://img.shields.io/badge/Reports-Markdown-lightgrey)
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi)
+![LangChain](https://img.shields.io/badge/LangChain-Framework-success)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker)
+![PyTest](https://img.shields.io/badge/PyTest-Testing-green?logo=pytest)
+![CI](https://github.com/harikrishnamunagala-hub/llm-regression-detection-framework/actions/workflows/ci.yaml/badge.svg)
+![License](https://img.shields.io/github/license/harikrishnamunagala-hub/llm-regression-detection-framework)
 
 </p>
 
 ---
 
-> **A modular framework for evaluating Large Language Models (LLMs), comparing model versions, detecting regressions, measuring inference latency, and generating automated evaluation reports.**
+# 📖 Overview
 
-## 🎯 Key Highlights
+Large Language Models continuously evolve through prompt engineering, fine-tuning, and new model releases. While these changes often improve overall performance, they can also introduce subtle regressions—responses that were previously correct may become incorrect, slower, or less semantically accurate.
 
-- 🔹 Provider-based LLM evaluation framework
-- 🔹 Modular architecture with Factory Design Pattern
-- 🔹 YAML-driven configuration (no hardcoded model selection)
-- 🔹 Automated regression detection using configurable thresholds
-- 🔹 Accuracy and latency benchmarking
-- 🔹 Markdown report generation for evaluation analysis
-- 🔹 Real Google Gemini API integration
-- 🔹 Easily extensible to new providers, scorers, and benchmark datasets
+The **LLM Regression Detection Framework** automates the evaluation process by comparing a **baseline model** against a **candidate model** on a configurable golden dataset. It measures response quality, latency, semantic similarity, and performance drift while generating detailed reports for analysis.
 
-## 📚 Table of Contents
+Designed with modularity and extensibility in mind, the framework demonstrates production-style software engineering practices for building reliable LLM evaluation pipelines.
 
-- [Overview](#-overview)
-- [Motivation](#-motivation)
-- [Architecture](#-architecture)
-- [Evaluation Workflow](#-evaluation-workflow)
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [How It Works](#-how-it-works)
-- [Sample Console Output](#-sample-console-output)
-- [Generated Report](#-generated-report)
-- [Design Principles](#-design-principles)
-- [Tech Stack](#-tech-stack)
-- [Roadmap](#-roadmap)
-- [Author](#-author)
+---
 
-## 📖 Overview
+# ✨ Features
 
-The **LLM Regression Detection Framework** is a modular evaluation pipeline designed to compare Large Language Models (LLMs), identify performance regressions, and generate structured evaluation reports.
+## 🧠 LLM Evaluation
 
-As LLMs evolve through new model releases, fine-tuning, or prompt modifications, even small changes can unintentionally degrade performance on previously solved tasks. This framework automates the evaluation process by comparing a baseline model against a candidate model using a configurable golden dataset.
-
-The framework measures response accuracy, tracks inference latency, detects regressions using configurable thresholds, and generates detailed Markdown reports for analysis. Its modular architecture enables easy integration of new model providers, evaluation metrics, scoring strategies, and benchmark datasets with minimal code changes.
-
-By separating configuration, model abstraction, evaluation logic, and reporting, the framework demonstrates software engineering practices commonly used in production AI systems.
-
-
-## 🎯 Motivation
-
-Large Language Models are evolving rapidly through new model releases, prompt engineering, and fine-tuning. While these updates often improve overall performance, they can also introduce regressions where previously correct responses become incorrect.
-
-Unlike traditional software, evaluating LLMs requires comparing generated responses rather than deterministic outputs. This project applies software engineering principles to LLM evaluation by providing an automated regression testing framework that measures accuracy, tracks latency, compares model versions, and generates structured evaluation reports.
-
-The framework aims to simplify model validation before deployment and serves as a foundation for integrating advanced evaluation metrics and industry-standard benchmark datasets.
-
-
-## 🏗 Architecture
-
-<p align="center">
-    <img src="assets/architecture.png" width="900">
-</p>
-
-## 🔄 Evaluation Workflow
-
-```text
-                   config.yaml
-                         │
-                         ▼
-                  Load Configuration
-                         │
-                         ▼
-                   Initialize Models
-                (Baseline & Candidate)
-                         │
-                         ▼
-                 Load Golden Dataset
-                         │
-                         ▼
-                  Generate Responses
-                         │
-                         ▼
-                  Compute Evaluation
-          (Accuracy + Latency + Scores)
-                         │
-                         ▼
-                Detect Performance
-                    Regression
-                         │
-                         ▼
-           Generate Markdown Report
-```
-
-## ✨ Features
-
-- Provider-based model abstraction
-- Factory Design Pattern for model initialization
-- YAML-driven configuration
+- Compare baseline and candidate models
 - Golden dataset evaluation
 - Exact Match scoring
-- Accuracy calculation
-- Average latency measurement
-- Threshold-based regression detection
-- Automatic Markdown report generation
-- Structured logging
-- Google Gemini integration
-- Mock model support for offline testing
-- Extensible modular architecture
+- Semantic Similarity scoring
+- Configurable evaluation thresholds
+- Prompt versioning support
 
-## 📂 Project Structure
+## 📊 Performance Monitoring
+
+- Accuracy benchmarking
+- Latency measurement
+- Regression detection
+- Drift detection
+- Evaluation history tracking
+- Automatic performance summaries
+
+## 📄 Reporting
+
+- HTML evaluation reports
+- Markdown reports
+- Structured logging
+- Detailed regression summaries
+- Failed test case analysis
+
+## ⚙️ Engineering Features
+
+- Provider-based model architecture
+- Factory Design Pattern
+- YAML-driven configuration
+- FastAPI REST API
+- Docker support
+- GitHub Actions CI
+- PyTest unit tests
+- Optional Slack notifications
+- Easily extensible to new providers and scorers
+
+---
+
+# 🎯 Why This Project?
+
+Modern AI applications require continuous evaluation before deploying new prompts or model versions. Even a small update can unintentionally degrade model performance.
+
+This framework provides a repeatable evaluation workflow that enables developers to:
+
+- Detect regressions before deployment
+- Compare multiple LLM versions
+- Measure quality and latency
+- Track historical performance
+- Automate evaluation inside CI/CD pipelines
+
+The project combines **LLM engineering** with **software engineering best practices**, making it suitable for production-inspired AI workflows.
+
+---
+
+# 🚀 Key Highlights
+
+- ✅ Multi-provider architecture
+- ✅ Factory Design Pattern
+- ✅ Configuration-driven development
+- ✅ Automated regression detection
+- ✅ Semantic similarity evaluation
+- ✅ Drift analysis
+- ✅ FastAPI REST API
+- ✅ Dockerized deployment
+- ✅ GitHub Actions CI pipeline
+- ✅ Extensible and modular design
+
+---
+
+# 📸 Project Demo
+
+The framework provides multiple ways to inspect evaluation results and monitor model performance.
+
+| FastAPI API | HTML Report |
+|-------------|-------------|
+| ![](assets/swagger.png) | ![](assets/report_sample.png) |
+
+| GitHub Actions | Console Output |
+|----------------|----------------|
+| ![](assets/github_actions.png) | ![](assets/terminal_output.png) |
+
+> **Note:** Replace the screenshots above with actual images from your project.
+
+---
+
+# 🏗️ Architecture
+
+<p align="center">
+    <img src="assets/architecture.png" width="950">
+</p>
+
+The framework follows a modular architecture that separates model providers, evaluation logic, scoring, reporting, and monitoring into independent components.
+
+This design makes it easy to integrate new LLM providers, scoring algorithms, or reporting systems without modifying the evaluation pipeline.
+
+---
+
+# 🔄 Evaluation Workflow
 
 ```text
-LLM_Regression_Detection/
+                         config.yaml
+                              │
+                              ▼
+                    Load Configuration
+                              │
+                              ▼
+                 Initialize Model Factory
+                              │
+                ┌─────────────┴─────────────┐
+                ▼                           ▼
+        Baseline Model              Candidate Model
+                │                           │
+                └─────────────┬─────────────┘
+                              ▼
+                   Load Golden Dataset
+                              │
+                              ▼
+                    Generate Responses
+                              │
+                              ▼
+               Exact Match Evaluation
+                              │
+                              ▼
+             Semantic Similarity Scoring
+                              │
+                              ▼
+             Accuracy & Latency Metrics
+                              │
+                              ▼
+              Regression Detection Engine
+                              │
+                              ▼
+                 Performance Drift Check
+                              │
+                              ▼
+               Store Evaluation History
+                              │
+                              ▼
+              Generate HTML & Markdown Reports
+                              │
+                              ▼
+                 FastAPI Response / CI Pipeline
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+LLM-Regression-Detection-Framework/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yaml                # GitHub Actions CI pipeline
 │
 ├── assets/
-│   ├── architecture.png
 │   ├── banner.png
+│   ├── architecture.png
 │   └── report_sample.png
 │
 ├── config/
-│   └── config.yaml
+│   └── config.yaml                # Framework configuration
 │
 ├── datasets/
 │   ├── golden_dataset.json
-│   └── test_dataset.json
+│   └── test_data.json
+│
+├── history/
+│   └── evaluation_history.json
+│
+├── prompts/
+│   ├── v1.yaml
+│   └── v2.yaml
 │
 ├── reports/
-│   └── evaluation_report.md
+│   ├── evaluation_report.md
+│   └── report.html
 │
 ├── src/
+│   ├── models/
+│   ├── scorers/
 │   ├── config.py
 │   ├── datasets.py
+│   ├── drift_detector.py
 │   ├── evaluator.py
+│   ├── history.py
+│   ├── html_report.py
 │   ├── logger.py
 │   ├── model_factory.py
-│   ├── models.py
+│   ├── prompt_loader.py
 │   ├── regression.py
 │   ├── report.py
-│   └── scorer.py
+│   └── slack_notifier.py
+│
+├── templates/
+│   └── report.html
 │
 ├── tests/
+│   ├── test_config.py
+│   └── test_regression.py
 │
-├── app.py
+├── api.py
+├── Dockerfile
 ├── requirements.txt
-├── README.md
 ├── LICENSE
-└── .gitignore
+└── README.md
 ```
-
-### Folder Description
-
-| Folder / File | Purpose |
-|---------------|---------|
-| `assets/` | README images, architecture diagram, report screenshots |
-| `config/` | YAML configuration files |
-| `datasets/` | Golden and test datasets used for evaluation |
-| `reports/` | Automatically generated evaluation reports |
-| `src/` | Core framework implementation |
-| `tests/` | Unit tests |
-| `app.py` | Entry point of the framework |
-| `requirements.txt` | Python dependencies |
-| `README.md` | Project documentation |
-
-## 🧩 Core Components
-
-| Component | Responsibility |
-|------------|----------------|
-| Config Loader | Loads framework configuration from YAML |
-| Model Factory | Creates baseline and candidate model instances |
-| Gemini Model | Connects to Google Gemini API |
-| Mock Model | Offline testing without API calls |
-| Evaluator | Runs model evaluation pipeline |
-| Scorer | Computes Exact Match scores |
-| Regression Detector | Detects performance degradation |
-| Report Generator | Generates Markdown evaluation reports |
-| Logger | Records framework execution logs |
-
-## ⚙️ How It Works
-
-The evaluation pipeline consists of the following stages:
-
-1. Load framework configuration from `config.yaml`.
-
-2. Initialize the baseline and candidate models using the Model Factory.
-
-3. Load the evaluation dataset.
-
-4. Generate responses for every question.
-
-5. Compute Exact Match scores.
-
-6. Measure inference latency for each response.
-
-7. Calculate evaluation metrics including:
-   - Accuracy
-   - Correct Answers
-   - Average Latency
-
-8. Compare baseline and candidate performance.
-
-9. Detect regression using the configured threshold.
-
-10. Generate a detailed Markdown evaluation report.
-
-## 📈 Sample Console Output
-
-```text
-============================================================
-Baseline Accuracy      : 85.00%
-Candidate Accuracy     : 85.00%
-
-Baseline Avg Latency   : 3.5614 sec
-Candidate Avg Latency  : 2.1762 sec
-
-Accuracy Drop          : 0.00%
-Status                 : PASS
-============================================================
-```
-
-## 📄 Generated Evaluation Report
-
-After every evaluation, the framework automatically generates a Markdown report containing:
-
-- Evaluation summary
-- Model information
-- Accuracy comparison
-- Latency comparison
-- Regression status
-- Failed test cases
-
-<p align="center">
-    <img src="assets/report_sample.png" width="900">
-</p>
-
-## 🏛 Design Principles
-
-The framework follows several software engineering principles to ensure scalability and maintainability.
-
-| Principle | Implementation |
-|-----------|----------------|
-| Separation of Concerns | Configuration, evaluation, scoring, reporting, and regression detection are implemented independently. |
-| Factory Design Pattern | Dynamically creates different LLM providers without modifying evaluation logic. |
-| Configuration over Hardcoding | YAML-based configuration allows switching models and datasets without code changes. |
-| Extensibility | New providers, scorers, and benchmark datasets can be added with minimal modifications. |
-| Reusability | Core evaluation components are independent and reusable across different workflows. |
-
-## 💻 Tech Stack
-
-| Category | Technology |
-|-----------|------------|
-| Programming Language | Python |
-| LLM Framework | LangChain |
-| Model Provider | Google Gemini |
-| Configuration | YAML |
-| Logging | Python Logging |
-| Environment | python-dotenv |
-| Report Format | Markdown |
-
-
-# 📌 Project Highlights
-
-This project demonstrates practical software engineering concepts applied to modern LLM systems.
-
-### Engineering Concepts
-
-- Modular Architecture
-- Factory Design Pattern
-- Configuration-Driven Development
-- Automated Evaluation Pipeline
-- Regression Testing
-- Performance Monitoring
-- Report Automation
-- Extensible Component Design
-
-### AI Concepts
-
-- Large Language Model Evaluation
-- Golden Dataset Testing
-- Accuracy Benchmarking
-- Latency Measurement
-- Regression Detection
-- Model Comparison
-
-
-# 🚀 Roadmap
-
-The project is actively being extended to support more advanced LLM evaluation capabilities.
-
-## ✅ Version 1.0 (Current)
-
-- [x] Modular project architecture
-- [x] Provider-based Model Factory
-- [x] Google Gemini integration
-- [x] Mock model support
-- [x] Golden Dataset evaluation
-- [x] Exact Match scorer
-- [x] Accuracy measurement
-- [x] Latency measurement
-- [x] Regression detection
-- [x] Markdown report generation
-- [x] YAML-driven configuration
-- [x] Structured logging
 
 ---
 
-## 🚧 Version 2.0 (Planned)
+# 🧩 Core Components
 
-- [ ] RapidFuzz-based scoring
-- [ ] Semantic similarity scoring
-- [ ] Multiple evaluation metrics (Precision, Recall, F1)
-- [ ] Benchmark dataset support (MMLU, GSM8K, HumanEval)
-- [ ] FastAPI REST API
-- [ ] Docker containerization
-- [ ] GitHub Actions CI pipeline
-- [ ] Unit testing suite
-- [ ] Multi-provider support (OpenAI, Ollama, Anthropic)
-- [ ] Interactive evaluation dashboard
-- [ ] Result visualization using charts
+| Component | Responsibility |
+|-----------|----------------|
+| **Model Factory** | Creates baseline and candidate model instances dynamically. |
+| **Prompt Loader** | Loads versioned prompts from YAML files. |
+| **Evaluator** | Executes the end-to-end evaluation pipeline. |
+| **Regression Detector** | Detects quality degradation between model versions. |
+| **Drift Detector** | Monitors evaluation drift across runs. |
+| **History Manager** | Stores historical evaluation results for comparison. |
+| **Scorers** | Computes Exact Match and Semantic Similarity scores. |
+| **HTML Report Generator** | Produces interactive evaluation reports. |
+| **Markdown Report Generator** | Generates lightweight evaluation summaries. |
+| **Slack Notifier** | Sends optional evaluation summaries to Slack. |
+| **FastAPI API** | Exposes evaluation endpoints for external applications. |
+
+---
+
+# 🏛 Design Principles
+
+The framework is built around modern software engineering practices commonly used in production AI systems.
+
+### Separation of Concerns
+
+Each module has a single responsibility, making the codebase easier to maintain and extend.
+
+### Factory Design Pattern
+
+The `ModelFactory` abstracts model creation, allowing new providers to be integrated without changing the evaluation pipeline.
+
+### Configuration-Driven Development
+
+Framework behavior is controlled through YAML configuration files rather than hardcoded values.
+
+### Extensibility
+
+New LLM providers, scorers, prompts, or reporting modules can be added with minimal code changes.
+
+### Reproducibility
+
+Versioned prompts, evaluation history, and structured reports ensure evaluation runs can be reproduced and audited.
+
+---
+
+# ⚡ Quick Start
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/LLM-Regression-Detection-Framework.git
+
+cd LLM-Regression-Detection-Framework
+```
+
+---
+
+## 2️⃣ Create a Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv venv
+
+source venv/bin/activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4️⃣ Configure Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+
+# Optional
+SLACK_WEBHOOK_URL=YOUR_SLACK_WEBHOOK
+```
+
+> **Note:** Slack integration is optional. If no webhook is provided, notifications are skipped automatically.
+
+---
+
+## 5️⃣ Configure the Framework
+
+The framework behavior is controlled using:
+
+```text
+config/config.yaml
+```
+
+Example configuration:
+
+```yaml
+baseline_model:
+  provider: gemini
+  model_name: gemini-2.5-flash
+
+candidate_model:
+  provider: gemini
+  model_name: gemini-2.5-flash
+
+dataset: datasets/golden_dataset.json
+
+prompt_version: v2
+
+regression_threshold: 5
+
+semantic_threshold: 0.85
+```
+
+---
+
+## 6️⃣ Run the Evaluation
+
+```bash
+python api.py
+```
+
+The framework will:
+
+- Load the configuration
+- Initialize models
+- Load prompts
+- Evaluate the dataset
+- Calculate Exact Match scores
+- Calculate Semantic Similarity
+- Detect regressions
+- Detect performance drift
+- Save evaluation history
+- Generate HTML and Markdown reports
+
+---
+
+# 🌐 FastAPI API
+
+After starting the application, open:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+Interactive Swagger documentation is automatically available.
+
+---
+
+## Available Endpoints
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/` | Root endpoint |
+| GET | `/health` | Health check |
+| POST | `/evaluate` | Run a complete evaluation |
+
+---
+
+## Example Request
+
+```http
+POST /evaluate
+```
+
+Example Response
+
+```json
+{
+    "status": "PASS",
+    "baseline_accuracy": 90.0,
+    "candidate_accuracy": 88.0,
+    "accuracy_drop": 2.0,
+    "semantic_similarity": 0.94,
+    "regression_detected": false,
+    "drift_detected": false,
+    "report": "reports/report.html"
+}
+```
+
+---
+
+# 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t llm-regression-framework .
+```
+
+Run the container:
+
+```bash
+docker run -p 8000:8000 \
+-e GOOGLE_API_KEY=YOUR_API_KEY \
+llm-regression-framework
+```
+
+---
+
+# 🧪 Running Tests
+
+Execute the unit tests using PyTest.
+
+```bash
+pytest
+```
+
+GitHub Actions automatically executes these tests on every push and pull request to ensure the framework remains stable.
+
+---
+
+# 📊 Generated Outputs
+
+After each evaluation, the framework automatically generates:
+
+```
+reports/
+│
+├── report.html
+└── evaluation_report.md
+
+history/
+└── evaluation_history.json
+```
+
+These outputs provide:
+
+- Accuracy comparison
+- Semantic similarity scores
+- Regression status
+- Drift analysis
+- Failed test cases
+- Historical evaluation records
+
+# 📈 Sample Evaluation Output
+
+```text
+==============================================================
+                LLM Evaluation Summary
+==============================================================
+
+Baseline Model          : Gemini 3.5 Flash Lite
+Candidate Model         : Gemini 3.5 Flash Lite
+
+Total Test Cases        : 20
+
+Baseline Accuracy       : 90.09%
+Candidate Accuracy      : 90.09%
+
+Semantic Similarity     : 0.94
+
+Baseline Latency        : 1.83 sec
+Candidate Latency       : 1.65 sec
+
+Accuracy Drop           : 2.00%
+
+Regression Detected     : ❌ No
+Drift Detected          : ❌ No
+
+Status                  : ✅ PASS
+
+==============================================================
+```
+
+---
+
+# 📊 Generated Reports
+
+After every evaluation the framework automatically generates:
+
+- 📄 Markdown Report
+- 🌐 Interactive HTML Report
+- 📚 Evaluation History
+
+These reports contain:
+
+- Model information
+- Accuracy comparison
+- Semantic similarity scores
+- Latency comparison
+- Regression summary
+- Drift analysis
+- Failed test cases
+- Historical performance
+
+---
+
+# 💡 Engineering Concepts Demonstrated
+
+This project focuses on both **LLM Engineering** and **Software Engineering**.
+
+## Software Engineering
+
+- Modular Architecture
+- Factory Design Pattern
+- Object-Oriented Programming
+- Configuration-Driven Development
+- Separation of Concerns
+- Dependency Management
+- Logging
+- Testing with PyTest
+- CI/CD using GitHub Actions
+- Dockerized Deployment
+
+---
+
+## AI Engineering
+
+- LLM Evaluation
+- Prompt Versioning
+- Prompt Engineering
+- Semantic Similarity Scoring
+- Regression Detection
+- Performance Drift Monitoring
+- Golden Dataset Evaluation
+- Model Comparison
+- Automated Evaluation Pipelines
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technology |
+|-----------|------------|
+| Programming Language | Python 3.13 |
+| API Framework | FastAPI |
+| LLM Framework | LangChain |
+| Model Provider | Google Gemini |
+| Embeddings | Sentence Transformers |
+| Configuration | YAML |
+| Reports | HTML & Markdown |
+| Testing | PyTest |
+| CI/CD | GitHub Actions |
+| Containerization | Docker |
+| Notifications | Slack (Optional) |
+
+---
+
+# 🚀 Future Improvements
+
+The framework is designed to be extensible. Planned enhancements include:
+
+- OpenAI provider support
+- Anthropic Claude integration
+- Ollama local models
+- Additional evaluation metrics (Precision, Recall, F1)
+- RAGAS integration
+- DeepEval integration
+- LLM-as-a-Judge evaluation
+- Pairwise model comparison
+- Interactive dashboard
+- Database-backed evaluation history
+- Benchmark datasets (MMLU, GSM8K, HumanEval)
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve the framework:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Open a Pull Request.
+
+Suggestions, issues, and feature requests are always appreciated.
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
+
+---
 
 # 👨‍💻 Author
 
-**Hari Krishna**
+## Hari Krishna
+
+**AI/ML Engineer | LLM Engineer | RAG Enthusiast**
 
 ### Areas of Interest
 
 - Large Language Models (LLMs)
 - Retrieval-Augmented Generation (RAG)
-- Machine Learning
+- Agentic AI
 - AI Infrastructure
 - MLOps
+- LLM Evaluation Systems
 
 ---
 
-If you found this project interesting, feel free to connect or provide feedback.
+⭐ **If you found this project helpful, consider giving it a star!**
+
+Feedback, suggestions, and contributions are always welcome.

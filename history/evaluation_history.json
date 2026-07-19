@@ -410,5 +410,35 @@
         "accuracy_drop": 0.0,
         "regressions": 0,
         "improvements": 0
+    },
+    {
+        "timestamp": "2026-07-19 01:01:07",
+        "baseline_provider": "gemini",
+        "candidate_provider": "gemini",
+        "baseline_model": "gemini-3.1-flash-lite",
+        "candidate_model": "gemini-3.1-flash-lite",
+        "baseline_accuracy": 90.9090909090909,
+        "candidate_accuracy": 81.81818181818183,
+        "baseline_latency": 0.9918227090919655,
+        "candidate_latency": 1.404051345454222,
+        "status": "FAIL",
+        "accuracy_drop": 9.09,
+        "regressions": 1,
+        "improvements": 0
+    },
+    {
+        "timestamp": "2026-07-19 11:06:18",
+        "baseline_provider": "gemini",
+        "candidate_provider": "gemini",
+        "baseline_model": "gemini-3.1-flash-lite",
+        "candidate_model": "gemini-3.1-flash-lite",
+        "baseline_accuracy": 90.9090909090909,
+        "candidate_accuracy": 81.81818181818183,
+        "baseline_latency": 1.0045494363624707,
+        "candidate_latency": 1.4626941636366113,
+        "status": "FAIL",
+        "accuracy_drop": 9.09,
+        "regressions": 1,
+        "improvements": 0
     }
 ]
